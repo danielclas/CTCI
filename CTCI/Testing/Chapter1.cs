@@ -73,5 +73,39 @@ namespace CTCI
             Assert.AreEqual(false, PalindromePermutation.IsPermutation(test6));
             Assert.AreEqual(true, PalindromePermutation.IsPermutation(test7));
         }
+
+        [TestMethod]
+        public void tOneAway()
+        {
+            string[] test1 = new string[] { "pale", "ple" };
+            string[] test2 = new string[] { "pales", "pale" };
+            string[] test3 = new string[] { "pale", "bale" };
+            string[] test4 = new string[] { "pale", "bake" };
+            string[] test5 = new string[] { "first","second"};
+            string[] test6 = new string[] { "aabbcc", "aabbcck" };
+
+            Assert.AreEqual(true, OneAway.Check(test1[0],test1[1]));
+            Assert.AreEqual(true, OneAway.Check(test2[0], test2[1]));
+            Assert.AreEqual(true, OneAway.Check(test3[0], test3[1]));
+            Assert.AreEqual(false, OneAway.Check(test4[0], test4[1]));
+            Assert.AreEqual(false, OneAway.Check(test5[0], test5[1]));
+            Assert.AreEqual(true, OneAway.Check(test6[0], test6[1]));
+        }
+        [TestMethod]
+        public void tCompression()
+        {
+            string test1 = "aabcccccaaa";
+            string success1 = "a2b1c5a3";
+
+            string test2 = "abcdefghi";
+            string success2 = "abcdefghi";
+
+            string test3 = "aaaaabbbbbaaaaajjjjj";
+            string success3 = "a5b5a5j5";
+
+            Assert.AreEqual(success1, StringCompression.Compress(test1));
+            Assert.AreEqual(success2, StringCompression.Compress(test2));
+            Assert.AreEqual(success3, StringCompression.Compress(test3));
+        }
     }
 }

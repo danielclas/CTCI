@@ -11,7 +11,8 @@ namespace CTCI
     {
         static void Main(string[] args)
         {
-            
+            Console.WriteLine(StringCompression.Compress("aabccccaaa"));
+            Console.ReadLine();
         }
 
         public static bool UniqueCharacters(string str)
