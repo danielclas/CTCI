@@ -51,9 +51,14 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Chapter1.cs" />
+    <Compile Include="Chapter2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Chapter2\Chapter2.csproj">
+      <Project>{8d423980-dab3-474e-a73e-cea9d141a842}</Project>
+      <Name>Chapter2</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CTCI\Chapter 1.csproj">
       <Project>{6fccf488-13e7-425b-a0d5-c707724ea53d}</Project>
       <Name>Chapter 1</Name>
