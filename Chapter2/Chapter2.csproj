@@ -44,10 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MyLinkedList.cs" />
+    <Compile Include="Palindrome.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoveDups.cs" />
     <Compile Include="ReturnKthToLast.cs" />
+    <Compile Include="SumLists.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

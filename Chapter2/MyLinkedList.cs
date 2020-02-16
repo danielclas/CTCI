@@ -12,6 +12,14 @@ namespace Chapter2
         Node head;
 
         public int Size { get { return size; } }
+        public T this[int index]
+        {
+            get
+            {
+                return GetData(index);
+            }
+        }
+
 
         public MyLinkedList()
         {
@@ -73,7 +81,7 @@ namespace Chapter2
         {
             Node n = null;
 
-            if (index <= size && index > 1)
+            if (index <= size && index > 0)
             {
                 if (index == 1)
                 {
@@ -106,6 +114,29 @@ namespace Chapter2
             {
                 return GetNode(index).data;
             }
+        }
+
+        public bool CompareList(MyLinkedList<T> list)
+        {
+            bool equals = true;
+
+            if (list.Size != size)
+            {
+                equals = false;
+            }
+            else
+            {
+                for (int i = 1; i <= Size; i++)
+                {
+                    if (list[i].CompareTo(this[i]) != 0)
+                    {
+                        equals = false;
+                        break;
+                    }
+                }
+            }
+
+            return equals;
         }
 
         public int IndexOf(T data)
