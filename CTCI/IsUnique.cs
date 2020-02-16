@@ -11,31 +11,7 @@ namespace CTCI
     {
         static void Main(string[] args)
         {
-            int[][] test1 = new int[4][];
-            test1[0] = new int[] { 1, 2, 3, 4 };
-            test1[1] = new int[] { 5, 6, 7, 8 };
-            test1[2] = new int[] { 9, 10, 11, 12 };
-            test1[3] = new int[] { 13, 14, 15, 16 };
-
-            int[][] success1 = RotateMatrix.Rotate(test1);
-
-            StringBuilder t = new StringBuilder();
-            StringBuilder s = new StringBuilder();
-
-            for (int i = 0; i < 4; i++)
-            {
-                for (int j = 0; j < 4; j++)
-                {
-                    t.Append(test1[i][j]);
-                    s.Append(success1[i][j]);
-                }
-
-                t.AppendLine(" ");
-                s.AppendLine(" ");
-            }
-
-            Console.WriteLine(t);
-            Console.WriteLine(s);
+            StringRotation.IsRotation("Primera", "a");
             Console.ReadLine();
         }
 

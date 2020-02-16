@@ -50,7 +50,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RotateMatrix.cs" />
     <Compile Include="StringCompression.cs" />
+    <Compile Include="StringRotation.cs" />
     <Compile Include="URLify.cs" />
+    <Compile Include="ZeroMatrix.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

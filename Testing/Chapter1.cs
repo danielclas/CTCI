@@ -141,5 +141,23 @@ namespace CTCI
 
             Assert.IsTrue(result1);
         }
+
+        [TestMethod]
+        public void tZeroMatrix()
+        {
+
+        }
+
+        [TestMethod]
+        public void tStringRotation()
+        {
+            string test1 = "waterbottle";
+            string test2 = "wordsandstrings";
+            string test3 = "automobile";
+
+            Assert.IsTrue(StringRotation.IsRotation(test1, "erbottlewat"));
+            Assert.IsFalse(StringRotation.IsRotation(test2, "asddd"));
+            Assert.IsTrue(StringRotation.IsRotation(test3, "mobileauto"));
+        }
     }
 }
