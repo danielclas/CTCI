@@ -40,7 +40,7 @@ namespace Chapter2
         {
             Node prev, next;
 
-            if (index <= size)
+            if (index <= size && index > 1)
             {
                 if (index == 1)
                 {
@@ -73,7 +73,7 @@ namespace Chapter2
         {
             Node n = null;
 
-            if (index <= size && index > 0)
+            if (index <= size && index > 1)
             {
                 if (index == 1)
                 {

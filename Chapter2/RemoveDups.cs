@@ -10,6 +10,9 @@ namespace Chapter2
     {
         public static void RemoveDuplicates(MyLinkedList<int> list)
         {
+            /*
+             * Write code to remove duplicates from an unsorted linked list;
+             */
             if (list.Size != 1)
             {
                 for (int i = 1; i <= list.Size; i++)

@@ -34,5 +34,20 @@ namespace Testing
             Assert.IsTrue(list.Size == 4);
             Assert.IsTrue(list2.Size == 1);
         }
+
+        [TestMethod]
+        public void tKthToLast()
+        {
+            MyLinkedList<int> list = new MyLinkedList<int>();
+
+            list.AddNode(1);
+            list.AddNode(2);
+            list.AddNode(3);
+            list.AddNode(4);
+
+            Assert.IsTrue(2 == ReturnKthToLast.KthToLast(2, list));
+            Assert.IsTrue(4 == ReturnKthToLast.KthToLast(0, list));
+            Assert.IsTrue(1 == ReturnKthToLast.KthToLast(3, list));
+        }
     }
 }
