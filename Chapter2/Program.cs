@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Chapter2.MyLinkedList<int>;
 
 namespace Chapter2
 {
@@ -10,27 +11,23 @@ namespace Chapter2
     {
         static void Main(string[] args)
         {
-            MyLinkedList<int> list = new MyLinkedList<int>();
+            MyLinkedList<char> list = new MyLinkedList<char>();
 
-            list.AddNode(2);
-            list.AddNode(4);
-            list.AddNode(2);
-            list.AddNode(4);
-            list.AddNode(6);
-            list.AddNode(8);
+            MyLinkedList<char>.Node repeatedNode = new MyLinkedList<char>.Node('C');
 
-            Console.WriteLine("Size: "+list.Size);
-            for (int i = 1; i <= list.Size; i++)
-            {
-                Console.WriteLine(list.GetData(i));
-            }
+            MyLinkedList<char>.Node node = new MyLinkedList<char>.Node('A');
+            list.AddNode(node);
+            node = new MyLinkedList<char>.Node('B');
+            list.AddNode(node);
+            list.AddNode(repeatedNode);
+            node = new MyLinkedList<char>.Node('D');
+            list.AddNode(node);
+            node = new MyLinkedList<char>.Node('E');
+            list.AddNode(node);
 
-            RemoveDups.RemoveDuplicates(list);
-            Console.WriteLine("Size: " + list.Size);
-            for (int i = 1; i <= list.Size; i++)
-            {
-                Console.WriteLine(list.GetData(i));
-            }
+            list.AddNode(repeatedNode);
+
+            LoopDetection.Detect(list);
 
             Console.ReadLine();
         }

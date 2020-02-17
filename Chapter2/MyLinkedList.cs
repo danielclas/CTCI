@@ -16,10 +16,9 @@ namespace Chapter2
         {
             get
             {
-                return GetData(index);
+                return index > size ? default(T) : GetData(index);
             }
         }
-
 
         public MyLinkedList()
         {
@@ -44,11 +43,36 @@ namespace Chapter2
             return true;
         }
 
+        public bool AddNode(Node node)
+        {
+            if (size == 0)
+            {
+                head = node;
+            }
+            else
+            {
+                Node n = GetNode(size);
+                n.next = node;
+            }
+
+            size++;
+
+            return true;
+        }
+
+        public bool AppendList(MyLinkedList<T> list)
+        {
+            GetNode(size).next = list.head;
+            size += list.Size;
+
+            return true;
+        }
+
         public bool RemoveNode(int index)
         {
             Node prev, next;
 
-            if (index <= size && index > 1)
+            if (index <= size && index >= 1)
             {
                 if (index == 1)
                 {
@@ -77,7 +101,7 @@ namespace Chapter2
             return true;
         }
 
-        private Node GetNode(int index)
+        public Node GetNode(int index)
         {
             Node n = null;
 
@@ -156,17 +180,17 @@ namespace Chapter2
             return index;
         }
 
-        internal class Node
+        public class Node
         {
-            internal Node next { get; set; }
-            internal T data { get; set; }
+            public Node next { get; set; }
+            public T data { get; set; }
 
-            internal Node()
+            public Node()
             {
                 next = null;
             }
 
-            internal Node(T data)
+            public Node(T data)
             {
                 this.data = data;
                 next = null;

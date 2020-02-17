@@ -27,16 +27,20 @@ namespace Chapter2
             StringBuilder n2 = new StringBuilder();
             string sum;
 
-            int int1, int2;
+            int int1, int2, size;
+            size = list1.Size > list2.Size ? list1.Size : list2.Size;
 
-            for (int i = list1.Size; i >= 1; i--)
+            for (int i = size; i >= 1; i--)
             {
-                n1.Append(list1[i]);
-            }
+                if (!ReferenceEquals(list1[i], null))
+                {
+                    n1.Append(list1[i]);
+                }
 
-            for (int i = list2.Size; i >= 1; i--)
-            {
-                n2.Append(list2[i]);
+                if (!ReferenceEquals(list2[i], null))
+                {
+                    n2.Append(list2[i]);
+                }
             }
 
             int1 = int.Parse(n1.ToString());
