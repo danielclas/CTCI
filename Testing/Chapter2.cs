@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Chapter2;
 using static Chapter2.MyLinkedList<int>;
+using static Chapter2.DeleteMiddleNode;
 
 namespace Testing
 {
@@ -172,6 +173,35 @@ namespace Testing
 
             list.RemoveNode(6);
             Assert.IsTrue(ReferenceEquals(null, LoopDetection.Detect(list)));
+        }
+
+        [TestMethod]
+        public void tDeleteMiddleNode()
+        {
+            ListNode nodeE = new ListNode('E');
+            ListNode nodeD = new ListNode('D', nodeE);
+            ListNode nodeC = new ListNode('C', nodeD);
+            ListNode nodeB = new ListNode('B', nodeC);
+            ListNode nodeA = new ListNode('A', nodeB);
+            ListNode node = nodeA;
+
+            char result;
+            bool exists = false;
+
+            DeleteMiddleNode.DeleteNode(nodeC);
+
+            while (!ReferenceEquals(null, node))
+            {
+                result = node.data;
+                if (result == 'C')
+                {
+                    exists = true;
+                    break;
+                }
+                node = node.next;
+            }
+
+            Assert.IsFalse(exists);
 
         }
     }

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeleteMiddleNode.cs" />
     <Compile Include="Intersection.cs" />
     <Compile Include="LoopDetection.cs" />
     <Compile Include="MyLinkedList.cs" />

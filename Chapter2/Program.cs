@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Chapter2.DeleteMiddleNode;
 using static Chapter2.MyLinkedList<int>;
 
 namespace Chapter2
@@ -11,23 +12,34 @@ namespace Chapter2
     {
         static void Main(string[] args)
         {
-            MyLinkedList<char> list = new MyLinkedList<char>();
+            ListNode nodeE = new ListNode('E');
+            ListNode nodeD = new ListNode('D', nodeE);
+            ListNode nodeC = new ListNode('C', nodeD);
+            ListNode nodeB = new ListNode('B', nodeC);
+            ListNode nodeA = new ListNode('A', nodeB);
+            ListNode node = nodeA;
 
-            MyLinkedList<char>.Node repeatedNode = new MyLinkedList<char>.Node('C');
+            char result;
 
-            MyLinkedList<char>.Node node = new MyLinkedList<char>.Node('A');
-            list.AddNode(node);
-            node = new MyLinkedList<char>.Node('B');
-            list.AddNode(node);
-            list.AddNode(repeatedNode);
-            node = new MyLinkedList<char>.Node('D');
-            list.AddNode(node);
-            node = new MyLinkedList<char>.Node('E');
-            list.AddNode(node);
+            while (!ReferenceEquals(null, node))
+            {
+                result = node.data;
+                node = node.next;
+                Console.WriteLine(result);
+            }
 
-            list.AddNode(repeatedNode);
+            ListNode newE = new ListNode('E');
+            ListNode newD = new ListNode('D', newE);
+            nodeC = new ListNode('D', newE);
 
-            LoopDetection.Detect(list);
+            node = nodeA;
+
+            while (!ReferenceEquals(null, node))
+            {
+                result = node.data;
+                node = node.next;
+                Console.WriteLine(result);
+            }
 
             Console.ReadLine();
         }
