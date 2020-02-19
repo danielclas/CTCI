@@ -17,10 +17,9 @@ namespace Chapter2
             ListNode nodeC = new ListNode('C', nodeD);
             ListNode nodeB = new ListNode('B', nodeC);
             ListNode nodeA = new ListNode('A', nodeB);
-            ListNode node = nodeA;
-
             char result;
 
+            ListNode node = nodeA;
             while (!ReferenceEquals(null, node))
             {
                 result = node.data;
@@ -28,12 +27,9 @@ namespace Chapter2
                 Console.WriteLine(result);
             }
 
-            ListNode newE = new ListNode('E');
-            ListNode newD = new ListNode('D', newE);
-            nodeC = new ListNode('D', newE);
+            DeleteMiddleNode.DeleteNode(nodeC);
 
             node = nodeA;
-
             while (!ReferenceEquals(null, node))
             {
                 result = node.data;

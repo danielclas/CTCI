@@ -19,8 +19,11 @@ namespace Chapter2
              *   Result: nothing is returned, but the new linked list looks like a - >b- >d - >e- >f 
              */
 
-            ListNode newNode;
-            ListNode next;
+            ListNode next = node.next;
+            node.data = next.data;
+            node.next = next.next;
+            //DUH!
+
         }
 
         public class ListNode
