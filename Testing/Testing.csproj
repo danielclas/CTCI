@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Testing</RootNamespace>
     <AssemblyName>Testing</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -16,6 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -53,15 +54,24 @@
     <Compile Include="Chapter1.cs" />
     <Compile Include="Chapter2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TechnicalQuestions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Chapter2\Chapter2.csproj">
       <Project>{8d423980-dab3-474e-a73e-cea9d141a842}</Project>
       <Name>Chapter2</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Chapter3\Chapter3.csproj">
+      <Project>{e80167bf-0cf6-4497-9661-a93ccbefc5f8}</Project>
+      <Name>Chapter3</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CTCI\Chapter 1.csproj">
       <Project>{6fccf488-13e7-425b-a0d5-c707724ea53d}</Project>
       <Name>Chapter 1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Technical Questions\Technical Questions.csproj">
+      <Project>{954daa79-3483-4f5a-93a5-3e9dd0635fa0}</Project>
+      <Name>Technical Questions</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
