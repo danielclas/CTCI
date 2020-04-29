@@ -2,29 +2,28 @@ function checkPermutation(s, t){
 
     let S = {};
     let T = {};
+    let keyS = [];
+    let keyT = [];
 
     for(let c of s){
-        if(S[c]){
-            S[c]++;
-        }else{
+        if(S[c]) S[c]++;
+        else{
             S[c]=1;
+            keyS.push(c);
         }
     }
 
     for(let c of t){
-        if(T[c]){
-            T[c]++;
-        }else{
+        if(T[c]) T[c]++;
+        else{
             T[c]=1;
+            keyT.push(c);
         }
     }
 
-    if(Object.keys(S).length != Object.keys(T).length){
-        return false;
-    }else{
-        let keys = Object.keys(S);
-
-        for(let k of keys)
+    if(keyS.length != keyT.length) return false;
+    else{
+        for(let k of keyT)
             if(!T[k] || T[k]!=S[k]) return false;        
     }
 
